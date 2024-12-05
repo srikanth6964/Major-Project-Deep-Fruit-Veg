@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Image - DeepFruit Veg</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Upload an Image for Classification</h1>
+            <p>Select an image of a fruit or vegetable to identify.</p>
+        </div>
+    </header>
+
+    <section class="upload-section">
+        <div class="container">
+            <form action="/predict.html" method="POST" enctype="multipart/form-data">
+                <label for="image-upload" class="upload-label">Choose Image</label>
+                <input type="file" id="image-upload" name="image" accept="image/*" required onchange="previewImage(event)">
+                <button type="submit" class="cta-button">Predict</button>
+            </form>
+
+            <!-- Image Preview Section -->
+            <img id="image-preview" class="image-preview" alt="Image Preview">
+        </div>
+    </section>
+
+    {% if prediction %}
+    <section class="result-section">
+        <div class="container">
+            <h2>Prediction Result</h2>
+            <p>The model predicts this fruit/vegetable as: <strong>{{ prediction }}</strong></p>
+
+            <!-- Display the uploaded image after prediction -->
+            <h3>Uploaded Image</h3>
+            <img src="{{ url_for('static', filename=image_path) }}" alt="Uploaded Image" class="result-image">
+        </div>
+    </section>
+    {% endif %}
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 DeepFruit Veg. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Function to preview the image before submission
+        function previewImage(event) {
+            var reader = new FileReader();
+            reader.onload = function() {
+                var output = document.getElementById('image-preview');
+                output.src = reader.result;
+                output.style.display = 'block';  // Show the preview image
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+</body>
+</html>

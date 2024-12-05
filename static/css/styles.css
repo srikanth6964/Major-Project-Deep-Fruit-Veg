@@ -1,0 +1,218 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Index Page Background */
+.index-page {
+    background-image: url('/static/images/img.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh; 
+    margin: 0;
+    padding: 0;   /* Ensure the body takes the full height */
+}
+/* Header Section */
+header {
+    background: linear-gradient(45deg, #1abc9c, #16a085);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+/* Navigation Menu */
+nav {
+    background: #333;
+    padding: 0.5rem 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #1abc9c;
+}
+
+/* About Section */
+.about-section {
+    padding: 2rem;
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 2rem;
+    text-align: center;
+}
+
+.contact-section p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+/* Gallery Section */
+.gallery-section {
+    padding: 2rem;
+}
+
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.gallery-grid img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* Single Gallery Item */
+.single-gallery-item {
+    text-align: center;
+    padding: 2rem;
+}
+
+.single-gallery-item .single-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+/* Upload Section */
+.upload-section {
+    padding: 2rem;
+    text-align: center;
+}
+
+.upload-label {
+    display: inline-block;
+    background: #1abc9c;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+.upload-label:hover {
+    background: #16a085;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.cta-button {
+    background: #16a085;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #1abc9c;
+}
+
+/* Image Preview Section */
+#image-preview {
+    width:150px;   /* Ensures the preview fits within the container */
+    height:150px;
+    margin-top: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    display: none;
+    margin-left: auto;
+    margin-right: auto; 
+
+}
+
+/* Result Image Display */
+.result-image, .result-preview {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+
+/* Footer Section */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gallery-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta-button {
+        width: 100%; /* Makes the button take full width on mobile */
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+}
